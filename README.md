@@ -190,4 +190,14 @@ Password: 12345678
 
 You will be redirected to home page upon clicking login.
 
-Under templates/registration create new file `home.html` [yes again]
+Under templates/registration create new file `home.html` `[refer code]`
+
+Open urls.py `[refer code]`
+
+Open views.py `[refer code]`
+
+Delete home.html folder under templates [the older home.html]
+
+Go to localhost:8000/registration
+
+You will see login page. Type username and password and then you will be redirected to registration/home home page.

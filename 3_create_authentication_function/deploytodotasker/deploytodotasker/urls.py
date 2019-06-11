@@ -16,4 +16,5 @@ urlpatterns = [
         {'next_page': '/'},
         name = 'registration-sign-out'),
     # Here we do not use views from deploytodotaskerapp, instead we use auth_views which is an alias of authentication library from django
+    url(r'^registration/$', views.registration_home, name = 'registration-home'),
 ]
