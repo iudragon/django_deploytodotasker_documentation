@@ -108,3 +108,17 @@ Under deploytodotaskerapp, create new folder 'templates' and create new file und
 Run server
 
 `python manage.py runserver`
+
+**Output:** Hello Python!
+
+Now when you first go to localhost:8000
+
+It first goes to deploytodotasker/urls.py and it looks for `urlpatterns` and then it comes to conclusion that we want to run `views.home` function.
+
+Then it goes to deploytodotaskerapp/views.py and finds the function named `home`
+
+And inside the function `home`, it renders the `home.html`
+
+Then it goes to `home.html` and renders exactly what it sees in the code.
+
+This is the process of urls.py, views.py, home.html
