@@ -92,3 +92,7 @@ Inside `INSTALLED_APPS` add at the bottom
 
 
 ## Create home page
+
+Under deploytodotaskerapp then open views.py
+
+Create function
