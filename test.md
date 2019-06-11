@@ -122,3 +122,24 @@ And inside the function `home`, it renders the `home.html`
 Then it goes to `home.html` and renders exactly what it sees in the code.
 
 This is the process of urls.py, views.py, home.html
+
+
+## Create Django dashboard
+
+Migrate
+
+`python manage.py migrate`
+
+Create super user
+
+`python manage.py createsuperuser`
+
+Username: admin
+Email addess: admin@example.com
+Password: 12345678
+
+Run server
+
+`python manage.py runserver`
+
+In web browser go to localhost:8000/admin and enter username and password you created. Now you are into Django dashboard.
