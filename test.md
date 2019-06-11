@@ -95,4 +95,16 @@ Inside `INSTALLED_APPS` add at the bottom
 
 Under deploytodotaskerapp then open views.py
 
-Create function
+Create function `[refer code]`
+
+views.py is just like controller in MVC model. it handles all the business logic and getting, processing data here. Then it will pass the result to Front End.
+
+We want to redirect to home page.
+
+Under deploytodotasker, open urls.py `[refer code]`
+
+Under deploytodotaskerapp, create new folder 'templates' and create new file under 'templates' named 'home.html' `[refer code]`
+
+Run server
+
+`python manage.py runserver`
