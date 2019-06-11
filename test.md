@@ -143,3 +143,24 @@ Run server
 `python manage.py runserver`
 
 In web browser go to localhost:8000/admin and enter username and password you created. Now you are into Django dashboard.
+
+
+## Adding Bootstrap
+
+Download Bootstrap
+
+Under deploytodotaskerapp create new folder `static` and under it another folder `css`
+
+Under `static` folder create another folder `img` and `font` and `js`
+
+From Bootstrap downloaded folder, if you have fonts then move to `font` folder we just created or if you don't have skip this step.
+
+Move bootstrap.min.css to our static/css folder.
+
+Move bootstrap.min.js to our static/js folder.
+
+We need to implement Bootstrap on our page.
+
+Open `home.html` `[refer code]`
+
+Under `css` folder create new file `style.css` `[refer code]`
