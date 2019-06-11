@@ -135,7 +135,9 @@ Create super user
 `python manage.py createsuperuser`
 
 Username: admin
+
 Email addess: admin@example.com
+
 Password: 12345678
 
 Run server
@@ -187,3 +189,5 @@ Username: admin
 Password: 12345678
 
 You will be redirected to home page upon clicking login.
+
+Under templates/registration create new file `home.html` [yes again]
