@@ -1,4 +1,5 @@
-# Create virtual environment for our python app
+## Create virtual environment for our python app
+
 Virtual environment is the tool to keep the dependency required by different projects in a separate place.
 
 *Project A depends on Version 1 but Project B depends on Version 2, so the virtual environment helps us to manage all this easily.*
@@ -63,3 +64,31 @@ Inside deploytodotasker project folder create `.gitignore` file
 `db.sqlite3`
 
 `*.pyc`
+
+Add to git
+
+`git add .`
+
+Commit to git
+
+`git commit -m "Git first commit"`
+
+
+## Create app
+
+We can have multiple apps in Django. Here, we create one app called deploytodotaskerapp
+
+`python manage.py startapp deploytodotaskerapp`
+
+**Output:** You will see deploytodotaskerapp inside deploytodotaskerapp project folder
+
+As we create new app, we need to tell django about this.
+
+Open deploytodotasker then settings
+
+Inside `INSTALLED_APPS` add at the bottom
+
+`'deploytodotaskerapp',`
+
+
+## Create home page
