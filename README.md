@@ -523,3 +523,27 @@ In terminal
 But there is no way to customize our login process. When someone sign up, we need to know whether they are customer or driver so that we can set them in the correspondent table in the database. We could that using pipeline.
 
 Open settings.py `[refer code]`
+
+Under deploytodotaskerapp, create new file `social_auth_pipeline.py` `[refer code]`
+
+Open POSTMAN
+
+POST, url: localhost:8000/api/social/convert-token
+
+Params:-
+
+Key: grant_type | value: convert_token
+
+Key: client_id | value: paste from django dashboard application client id
+
+key: client_secret | value: paste from django dashboard application client secret
+
+key: backend | value: facebook
+
+key: token | value: paste from developers.facebook.com/tools/accesstoken [use User Token]
+
+key: user_type | value: driver [later try with different value, that will be then be associated with customer model in django admin dashboard]
+
+Click send
+
+Now check in django admin dashboard you will see new driver.
