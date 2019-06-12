@@ -501,4 +501,4 @@ You will not see anything in POSTMAN.
 
 Go to django admin dashboard access token. You will see that access token previously copied and pasted in token value in POSTMAN is now removed.
 
-*Once you sign out the access token needs to be deleted from the server. This how it works for normal user. As you login again, new access token will be created.*
+*Once you sign out, the access token needs to be deleted from the server. This how it works for normal user. As you login again, new access token will be created.*
