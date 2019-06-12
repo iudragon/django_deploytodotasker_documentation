@@ -275,6 +275,6 @@ Go to localhost:8000/registration/sign-up and fill the form and press sign up bu
 
 You will be redirected to home page.
 
-To confirmed you are logged in. Go to localhost:8000/admin and enter your super user name and password.
+To confirm you are logged in. Go to localhost:8000/admin and enter your super user name and password.
 
 In Users, you will see the newly created username and other details you just filled out.
