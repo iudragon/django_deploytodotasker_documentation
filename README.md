@@ -307,3 +307,11 @@ Copy all the dependencies you installed to requirements.txt
 Do `pip freeze` to view all the dependencies.
 
 Under deploytodotasker project folder, create new file `Procfile` [with no extension] `[refer code]`
+
+In terminal `pip install whitenoise` [for serving static files]
+
+Open requirements.txt, paste the whitenoise dependency `[refer code]`
+
+Open settings.py `[refer code]`
+
+Open wsgi.py `[refer code]`
