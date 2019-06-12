@@ -1,10 +1,10 @@
-## Create virtual environment for our python app
+## Create virtual environment
 
 Virtual environment is the tool to keep the dependency required by different projects in a separate place.
 
 *Project A depends on Version 1 but Project B depends on Version 2, so the virtual environment helps us to manage all this easily.*
 
-## Create virtual environment
+In terminal [command prompt] for Windows user:
 
 `virtualenv deploytodoenv/deploytodotasker`
 
