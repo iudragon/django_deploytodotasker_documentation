@@ -201,3 +201,38 @@ Delete home.html folder under templates [the older home.html]
 Go to localhost:8000/registration
 
 You will see login page. Type username and password and then you will be redirected to registration/home home page.
+
+
+## Create Model for registration
+
+Previously we create login and sign out function for user and we tested it with super user account.
+
+Now we want registration owners to create account, so we are going to create model for registration.
+
+There are two objects in our scenario: Registration owner and registration itself.
+
+For registration owners we are going to use Users object provided by django.
+
+Our task is to create model for registration and that is the custom model.
+
+Under deploytodotaskerapp open models.py `[refer code]`
+
+Then in terminal
+
+`pip install pillow`
+
+*Every time a model is created or changed, run this two command*
+
+`python manage.py makemigrations`
+
+`python manage.py migrate`
+
+Open deploytodotasker/urls.py `[refer code]`
+
+Open deploytodotaskerapp/views.py `[refer code]`
+
+Under templates, create new file 'sign_up.html' `[refer code]`
+
+Go to localhost:8000/registration/sign-up
+
+Now, again we understood how urls.py, views.py, sign_up.html works together.
