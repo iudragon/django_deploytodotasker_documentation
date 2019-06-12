@@ -236,3 +236,20 @@ Under templates, create new file 'sign_up.html' `[refer code]`
 Go to localhost:8000/registration/sign-up
 
 Now, again we understood how urls.py, views.py, sign_up.html works together.
+
+Right now, we have nothing on Sign Up page. We need to create forms for registration.
+
+
+## Sign Up Form
+
+Under deploytodotaskerapp create new file `forms.py` `[refer code]`
+
+Open deploytodotaskerapp/views.py `[refer code]`
+
+Open registration/sign_up.html `[refer code]`
+
+Go to localhost:8000/registration/sign-up
+
+You will see forms with UserForm fields and RegistrationForm fields
+
+Sending data won't work at this moment. We have to tell django what to do when data is submitted.
