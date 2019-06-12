@@ -357,3 +357,24 @@ Web browser will open. You will see login form.
 Go to /admin of your heroku site. You will see django dashboard.
 
 Note: Clicking on registration in django dashboard will display error for now.
+
+
+## Facebook Authentication
+
+Go to developers.facebook.com
+
+Create new app
+
+Select website
+
+Create new Facebook App Id
+
+In facebook dashboard, go to settings
+
+Add platform
+
+Select website
+
+Enter url: http://localhost:8000
+
+Save changes  
