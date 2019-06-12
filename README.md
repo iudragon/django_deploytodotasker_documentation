@@ -426,3 +426,79 @@ Authorization grant type should be resource owner password based
 Set name as whatever you want
 
 Click save
+
+*As of now, we installed django rest framework social oauth. Now we will use facebook api to create new users*
+
+Suppose we have an android app [which we are going to create soon with documentation] with facebook login button.
+
+As we click on facebook login, the request will be sent to facebook to authorize it.
+
+Once facebook authorize it, it will send facebook token back to the android app.
+
+Then the android app with send the facebook token along with some parameters to this api: localhost:8000/api/social/convert-token
+
+Once we get the request above, django rest framework social oauth will create new user and access token into the database.
+
+And then it sends access token and refresh token back to the android app
+
+Every time, android app user will request something from server, android app needs to send the access token as well.
+
+We do not have android app at this moment. So we will use POSTMAN
+
+Open POSTMAN
+
+POST, url: localhost:8000/api/social/convert-token
+
+Params:-
+
+Key: grant_type | value: convert_token
+
+Key: client_id | value: paste from django dashboard application client id
+
+key: client_secret | value: paste from django dashboard application client secret
+
+key: backend | value: facebook
+
+key: token | value: paste from developers.facebook.com/tools/accesstoken [use User Token]
+
+Click send
+
+You will get access token and refresh token plus other information.
+
+Now, check django admin dashboard for new user. You will find one with facebook name of that user. But you won't find the email of the user.
+
+To get the email addess:
+
+Go to developers.facebook.com/tools/explorer
+
+Select your application
+
+Click get token --> get user access token and tick the email and click on get access token button.
+
+Copy the access token.
+
+Paste it in the POSTMAN token value.
+
+Click send.
+
+Check django admin dashboard, you will find email address of that facebook user.
+
+In POSTMAN on another tab:-
+
+POST, url: localhost:8000/api/social/revoke-token
+
+Params:-
+
+key: client_id | value: paste from django dashboard application client id
+
+key: client_secret | value: paste from django dashboard application client secret
+
+key: token | value: *Token here is the access token you will find in django admin dashboard, under django oauth toolkit --> access token. Copy an access token from there and paste it as value in POSTMAN*
+
+Click send.
+
+You will not see anything in POSTMAN.
+
+Go to django admin dashboard access token. You will see that access token previously copied and pasted in token value in POSTMAN is now removed.
+
+*Once you sign out the access token needs to be deleted from the server. This how it works for normal user. As you login again, new access token will be created.*
