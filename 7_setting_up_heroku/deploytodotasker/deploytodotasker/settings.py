@@ -122,10 +122,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# To serve the static files on heroku 
+# To serve the static files on heroku
 
 LOGIN_REDIRECT_URL = '/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+# Default database on local in sqlite but when we upload our app to heroku. This settins will help us to replace our database with the heroku default database which is postgres

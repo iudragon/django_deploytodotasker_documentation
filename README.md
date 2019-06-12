@@ -315,3 +315,45 @@ Open requirements.txt, paste the whitenoise dependency `[refer code]`
 Open settings.py `[refer code]`
 
 Open wsgi.py `[refer code]`
+
+Now we are going to configure database so it works with heroku
+
+In terminal, `pip install dj-database-url`
+
+Copy the dependency and paste this in requirements.txt `[refer code]`
+
+Add package `psycopg2` and `psycopg2-binary`
+
+NOTE: we add the above two dependency in our requirements.txt but do NOT install it using pip.
+
+We do not install on local. Because our local database is sqlite but when we upload our app to heroku, we need to use postgres. Because heroku supports postgres database.
+
+Open settings.py `[refer code]`
+
+In terminal
+
+`git add .`
+
+`git commit -m "Deploy to heroku"`
+
+`git push heroku master`
+
+`heroku run python manage.py migrate`
+
+Migrates all database structure from local to Heroku [not data]
+
+`heroku run python manage.py createsuperuser`
+
+Username: admin
+
+Email: admin@example.com
+
+Password: 12345678
+
+`heroku open`
+
+Web browser will open. You will see login form.
+
+Go to /admin of your heroku site. You will see django dashboard.
+
+Note: Clicking on registration in django dashboard will display error for now.
