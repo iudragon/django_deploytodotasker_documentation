@@ -253,3 +253,28 @@ Go to localhost:8000/registration/sign-up
 You will see forms with UserForm fields and RegistrationForm fields
 
 Sending data won't work at this moment. We have to tell django what to do when data is submitted.
+
+
+## Send Data using Form
+
+Open deploytodotaskerapp/forms.py `[refer code]`
+
+Open deploytodotaskerapp/views.py `[refer code]`
+
+We are going to upload images to our server, we need to store them.
+
+Open deploytodotasker/settings.py `[refer code]`
+
+Open sign_up.html `[refer code]`
+
+Open deploytodotasker/urls.py `[refer code]`
+
+Open deploytodotaskerapp/admin.py `[refer code]`
+
+Go to localhost:8000/registration/sign-up and fill the form and press sign up button.
+
+You will be redirected to home page.
+
+To confirmed you are logged in. Go to localhost:8000/admin and enter your super user name and password.
+
+In Users, you will see the newly created username and other details you just filled out.
