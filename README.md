@@ -80,7 +80,7 @@ We can have multiple apps in Django. Here, we create one app called deploytodota
 
 `python manage.py startapp deploytodotaskerapp`
 
-**Output:** You will see deploytodotaskerapp inside deploytodotaskerapp project folder
+**Output:** You will see deploytodotaskerapp inside deploytodotasker project folder
 
 As we create new app, we need to tell django about this.
 
@@ -502,3 +502,24 @@ You will not see anything in POSTMAN.
 Go to django admin dashboard access token. You will see that access token previously copied and pasted in token value in POSTMAN is now removed.
 
 *Once you sign out, the access token needs to be deleted from the server. This how it works for normal user. As you login again, new access token will be created.*
+
+
+## Model for Customer and Driver
+
+Open models.py `[refer code]`
+
+Open admin.py `[refer code]`
+
+In terminal
+
+`python manage.py makemigrations`
+
+`python manage.py migrate`
+
+`python manage.py runserver`
+
+*Previously we learn how to use django rest framework social oauth for login, sign up and sign out process*
+
+But there is no way to customize our login process. When someone sign up, we need to know whether they are customer or driver so that we can set them in the correspondent table in the database. We could that using pipeline.
+
+Open settings.py `[refer code]`
