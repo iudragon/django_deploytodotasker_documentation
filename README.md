@@ -378,3 +378,51 @@ Select website
 Enter url: http://localhost:8000
 
 Save changes  
+
+*In our app, customer and driver will sign in using their facebook account. Then they will send their facebook token to our server to process*
+
+To be able to work with RESTful api from facebook we need to install django-rest-framework-social-oauth2
+
+In terminal, while keeping your virtual environment activated as before and inside deploytodotasker project folder install:
+
+`pip install django-rest-framework-social-oauth2`
+
+Add dependency to requirements.txt `[refer code]`
+
+Open settings.py `[refer code]`
+
+We will refer code from https://github.com/RealmTeam/django-rest-framework-social-oauth2
+
+Open urls.py `[refer code]`
+
+In terminal
+
+`python manage.py migrate`
+
+`python manage.py runserver`
+
+Go to localhost:8000/admin
+
+In django dashboard, you will see DJANGO OAUTH TOOLKIT and PYTHON SOCIAL AUTH
+
+We are going to create application for our DJANGO OAUTH TOOLKIT.
+
+Click on application
+
+Add Application
+
+NOTE: Client Id and Client Secret should NEVER be changed.
+
+Save those carefully.
+
+Enter user as 1 [admin i.e superuser]
+
+Keep redirect uris  blank
+
+Client type: Confidential
+
+Authorization grant type should be resource owner password based
+
+Set name as whatever you want
+
+Click save

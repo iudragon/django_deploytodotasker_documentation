@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 # To differentiate between two view, we give alias 'auth_views'
@@ -24,4 +24,9 @@ urlpatterns = [
     url(r'^registration/sign-up', views.registration_sign_up,
         name = 'registration-sign-up'),
     url(r'^registration/$', views.registration_home, name = 'registration-home'),
+    url(r'^api/social/', include('rest_framework_social_oauth2.urls')),
+    # api/social is customizable.
+    # Later if we call convert-token that will be used for (login / sign_up)
+    # For sign_out we call revoke-token
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

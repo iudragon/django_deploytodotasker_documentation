@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'deploytodotaskerapp',
+    'oauth2_provider',
+    'social_django',
+    'social.apps.django_app.default',
+    'rest_framework_social_oauth2',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +68,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -135,3 +141,23 @@ db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
 # Default database on local in sqlite but when we upload our app to heroku. This settins will help us to replace our database with the heroku default database which is postgres
+
+
+AUTHENTICATION_BACKENDS = (
+   'social.backends.facebook.FacebookOAuth2',
+   'rest_framework_social_oauth2.backends.DjangoOAuth2',
+   'django.contrib.auth.backends.ModelBackend',
+)
+
+# Facebook configuration
+SOCIAL_AUTH_FACEBOOK_KEY = '826934180991761'
+# PUT YOUR APP ID HERE FROM developers.facebook.com dashboard settings
+SOCIAL_AUTH_FACEBOOK_SECRET = '8233726876e518dbbbcd626a3a378471'
+# PUT YOUR APP SECRET KEY HERE FROM developers.facebook.com dashboard settings
+
+
+# Define SOCIAL_AUTH_FACEBOOK_SCOPE to get extra permissions from facebook. Email is not sent by default, to get it, you must request the email permission:
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+    'fields': 'id,name,email'
+}
