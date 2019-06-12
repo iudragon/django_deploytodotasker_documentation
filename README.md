@@ -278,3 +278,32 @@ You will be redirected to home page.
 To confirm you are logged in. Go to localhost:8000/admin and enter your super user name and password.
 
 In Users, you will see the newly created username and other details you just filled out.
+
+
+## Setting Heroku [For now, later we will use Digital Ocean]
+
+In terminal, make sure you are in deploytodotasker project folder.
+
+`heroku login`
+
+Login to heroku
+
+`heroku create`
+
+Under deploytodotasker project folder, create new file `runtime.txt` `[refer code]`
+
+Because we need to tell heroku what needs to be installed.
+
+In terminal
+
+`pip install gunicorn`
+
+We need to tell heroku what we installed.
+
+Under deploytodotasker project folder, create new file `requirements.txt` `[refer code]`
+
+Copy all the dependencies you installed to requirements.txt
+
+Do `pip freeze` to view all the dependencies.
+
+Under deploytodotasker project folder, create new file `Procfile` [with no extension] `[refer code]`
